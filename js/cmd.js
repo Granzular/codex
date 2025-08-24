@@ -1,6 +1,4 @@
-
 window.addEventListener("load",reg);
-
 function reg(e){
     
     let history = "COMMAND HISTORY\n";
