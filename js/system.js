@@ -162,6 +162,7 @@ function pwd(){
 
 /*
  * NoBash Interpreter
+ * This is a base class and shouldnt be used directly, unless you know what you are doing.lol. use the wrapper nobash instead 
  * */
 class Nobash{
 	// nobash shell lang interpreter. authored by michael@granzularcodex 
@@ -176,7 +177,8 @@ class Nobash{
 		// fname: file name. this method checks for the file existence and parse it if it exist, return Error if not found in current directory.
 		let d =  Dir.currentDir.content;
 		let item;
-		let src;
+		let src=null;
+	    
 		for(item of d){
 
 			if(item.name===fname && item.whatIs()==="file"){
@@ -187,6 +189,7 @@ class Nobash{
 				src = null;
 			}
 		}
+	    console.log(src);
 		if(src===null){throw ReferenceError("file does not exist: " + fname)}
 		else{ this.run(src.split(";"));
 		}
@@ -298,8 +301,19 @@ class Nobash{
 				console.log("command not found");
 		}
 	}
-// end of class
 }
 
+/* wrapper of Nobash class, helper function*/
+function nobash(fname){
+  
+       const nsh = new Nobash();
+        nsh.init(fname);
+       return nsh.output.log;
+    /*
+    catch (error){
+        console.error(error);
+        return error;
+    }*/
+}
 
 

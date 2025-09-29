@@ -4,7 +4,7 @@ h1{
   font-size: 25px;
 }
 
-div{
+.display{
   display: box;
   width:90vw;
   height: 40vh;
@@ -17,21 +17,21 @@ div{
   border-color:#777;
   box-shadow: 0 0 5px 2px #777;
 }
-input{
+.cmdbox{
   width:95%;
   height: 18%;
   background-color: rgb(10,10,10);
   color:rgb(240,240,240);
   border:none;
 }
-input::placeholder{
+.cmdbox::placeholder{
   color:green;
   font-weight: bold;
 }
-input:focus,textarea:focus{
+.cmdbox:focus,.terminal:focus{
   outline: none;
 }
-textarea{
+.terminal{
   width: 95%;
   height: 78%;
   background-color: rgb(10,10,10);

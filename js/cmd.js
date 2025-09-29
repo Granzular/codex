@@ -37,7 +37,7 @@ function reg(e){
              display.value = "";
          }
          else if(cmd === "help"){
-             result = "COMMAND : USAGE\n\necho: same old echo\nclear : clear output display\ninfo : display website author info\ntime : outputs device time\ncolor : changes background-color. recieves single argument <color>. example=> color blue\ngurl : a low budget curl,opens a url. example=> gurl https://exp.com/\nhelp : display this help";
+             result = "COMMAND : USAGE\n\necho: same old echo\nclear : clear output display\ninfo : display website author info\ntime : outputs device time\ncolor : changes background-color. recieves single argument <color>. example=> color blue\ncurl : a low budget curl,opens a url. example=> curl https://exp.com/\nhelp : display this help";
          }
          else if(cmd === "info"){
              result = "\nName: Michael Ayeni\nEmail: ayenimichael92@gmail.com\nBrand: granzularcodex"
@@ -53,11 +53,15 @@ function reg(e){
          else if(cmd === "history"){
              result = history;
          }
-         else if(cmd === "gurl"){
+         else if(cmd === "curl"){
              gurlCmd(args);
          }
          else if(cmd === "echo"){
              result = args.toString();
+         }
+         else if(cmd === "nobash"){
+             
+             result = nobash(args[0]);
          }
          else{
              result = cmd +": no such command, type help to see available commands";
