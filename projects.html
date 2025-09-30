@@ -1,15 +1,15 @@
- <!DOCTYPE html>
+  <!DOCTYPE html>
 
 <html>
 <head>
   <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
-  <title>Home</title>
   <meta name="viewport" content="width=device-width,initial-scale=1.0">
-
-  <link rel="stylesheet" href="css/style.css">
+  <title>Projects</title>
   
+  <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/navbar.css">
   
+ 
 </head>
 <body>
   <div class="head">
@@ -19,7 +19,7 @@
     </div>
      </header>
    
-      <nav class="navbar">
+        <nav class="navbar">
         
         <div class="container">
           <menu id="topmenu">
@@ -35,26 +35,32 @@
         </div>
       </nav>
   </div>
-  <div class="body">
-  <section id="showcase">
-    <div class="container">
-    <p id="showcase-text">
-    </p>
-    </div>
-  </section>
     
-  <main class="container">
-  <section id="main-content">
-    <h2>Introduction</h2>
+  <main class="container body">
+    <h2 id="project-h2">Projects</h2>
+  
     <p>
-       Codex Lab, brought to you by <a href="https://granzularcodex.pythonanywhere.com/" class="custom-link">Michael@granzularcodex</a>.
-      A website that contains fun and amazing projects; it is also itself a project, created using pure CSS and Javascript(no frameworks). Explore!
+      Welcome traveller. I see you have come looking for treasures, or stumbled upon them! They lie ahead. Explore!
     </p>
-  </section>
-    <aside id="sidebar">
-       Who is michael@granzularcodex? That's the lead developer and CEO at Granzularcodex, he also goes by the cryptic, Granzular. He is passionate about creating quality software.
-      <a href="https://granzular.pythonanywhere.com/about/" class="custom-link">portfolio website &rightarrow;</a>
-    </aside>
+    <hr>
+    <section class="card">
+      <img alt="image of a terminal emulator" src="images/bg08.jpg">
+        <h3 class="card-title">Command Line</h3>
+      <p class="card-text">
+        A online web terminal emulator built with pure javascript.
+      </p>
+      <a href="cmd.html" class="card-but">view project</a>
+    </section>
+    
+     <section class="card">
+       <img src="images/bg03.jpg">
+      <h3 class="card-title">Digital Systems</h3>
+      <p class="card-text">
+        Exploring digital systems through coding. Welcome to the world of agile emulation
+      </p>
+      <a class="card-but">view project</a>
+    </section>
+  </main>
   </main>
   
   <footer>
@@ -62,13 +68,14 @@
     <p>Copyright &copy; <span id="year"></span> @granzularcodex</p>
     </div>
   </footer>
-  </div>
 </body>
 <script type="text/javascript">
 let date = new Date();
 document.querySelector("#year").innerHTML = date.getFullYear();
 </script>
-<script type="text/javascript" src="js/showcase.js"></script>
-<script type="text/javascript" src="js/navbar.js"></script>
+
+<script type="application/javascript" src="js/navbar.js"></script>
+
+  
 </html>
  
