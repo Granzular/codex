@@ -8,6 +8,8 @@
 
   <link rel="stylesheet" href="css/style.css">
   
+  <link rel="stylesheet" href="css/navbar.css">
+  
 </head>
 <body>
   <header>
@@ -16,16 +18,19 @@
     </div>
      </header>
    
-      <nav>
+      <nav class="navbar">
+        
         <div class="container">
-        <ul>
-          <li><a href="/">home</a></li>
-           <li><a href="cmd.html">cmd</a></li>
-           <li><a href="#about">about</a></li>
-        </ul>
           <menu id="topmenu">
-            <img src="images/menuicon01.png">
+            <img src="images/menuicon01.png" class="nav-icon" id="menu-icon">
           </menu>
+          
+        <ul id="navbar-ul">
+          <li><a href="index.html" class="nav-link" >home</a></li>
+           <li><a href="cmd.html" class="nav-link" >cmd</a></li>
+           <li><a href="about.html" class="nav-link" >about</a></li>
+        </ul>
+          
         </div>
       </nav>
     
@@ -40,12 +45,13 @@
   <section id="main-content">
     <h2>Introduction</h2>
     <p>
-       Codex Lab, brought to you by <a href="https://granzularcodex.pythonanywhere.com/">Michael@granzularcodex</a>.
+       Codex Lab, brought to you by <a href="https://granzularcodex.pythonanywhere.com/" class="custom-link">Michael@granzularcodex</a>.
       A website that contains fun and amazing projects; it is also itself a project, created using pure CSS and Javascript(no frameworks). Explore!
     </p>
   </section>
     <aside id="sidebar">
-      Helo boy from tarmac aside from beoloe r hagshs shsgs susge duxowpe rys  shvs egsys eiscr sugs sus shsv e sjjapnw shhs  wiva  aua sy r aojr suvr rishd gi  eushve due rhs ruw ehsvs  roos ehd.
+       Who is michael@granzularcodex? That's the lead developer and CEO at Granzularcodex, he also goes by the cryptic, Granzular. He is passionate about creating quality software.
+      <a href="https://granzular.pythonanywhere.com/about/" class="custom-link">portfolio website &rightarrow;</a>
     </aside>
   </main>
   
@@ -60,5 +66,6 @@ let date = new Date();
 document.querySelector("#year").innerHTML = date.getFullYear();
 </script>
 <script type="text/javascript" src="js/showcase.js"></script>
+<script type="text/javascript" src="js/navbar.js"></script>
 </html>
  

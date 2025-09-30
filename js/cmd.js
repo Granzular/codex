@@ -2,7 +2,7 @@ window.addEventListener("load",reg);
 function reg(e){
     
     let history = "COMMAND HISTORY\n";
-    const inp = document.querySelector("input");
+    const inp = document.querySelector("#cmdbox");
     inp.addEventListener("keydown",run);
     function argParse(exp){
         exp = exp.split(" ");
@@ -11,16 +11,16 @@ function reg(e){
         return [cmd,args];
     }
     
-    function gurlCmd(args){
+    function curlCmd(args){
         let url = args[0];
         console.log(args);
         fetch (url)
         .then(res => res.text())
         .then(data => {
-            document.querySelector("textarea").value = ">>>\n"+data;
+            document.querySelector("#display").innerHTML += ">>>\n"+data;
         })
         .catch(err => {
-            document.querySelector("textarea").value = ">>>\n"+err;
+            document.querySelector("#display").value += inp.value +"\n"+err;
         console.log(err)})
     }
     function run(e){
@@ -32,9 +32,9 @@ function reg(e){
         exp = argParse(exp);
         let cmd = exp[0];
         let args = exp[1];
-        const display = document.querySelector("textarea");
+        const display = document.querySelector("#display");
          if (cmd === "clear"){
-             display.value = "";
+             display.innerHTML = "";
          }
          else if(cmd === "help"){
              result = "COMMAND : USAGE\n\necho: same old echo\nclear : clear output display\ninfo : display website author info\ntime : outputs device time\ncolor : changes background-color. recieves single argument <color>. example=> color blue\ncurl : a low budget curl,opens a url. example=> curl https://exp.com/\nhelp : display this help";
@@ -54,7 +54,7 @@ function reg(e){
              result = history;
          }
          else if(cmd === "curl"){
-             gurlCmd(args);
+             curlCmd(args);
          }
          else if(cmd === "echo"){
              result = args.toString();
@@ -66,8 +66,15 @@ function reg(e){
          else{
              result = cmd +": no such command, type help to see available commands";
          }
-        display.value = ">>> " + result ; 
+         
+         const br = document.createElement("br");
+         display.innerHTML += "$_ "+inp.value;
+         display.appendChild(br.cloneNode());
+         display.innerHTML += result;
+         display.appendChild(br.cloneNode());
          inp.value = "";
+         inp.focus();
+         
      }
     }
 }

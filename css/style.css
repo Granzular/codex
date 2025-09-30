@@ -12,28 +12,15 @@ body{
   margin: auto;
   overflow: hidden;
 }
+.custom-link{
+ text-decoration: none;
+color: lightblue;  
+}
 header{
   background: linear-gradient(90deg,coral,lightblue);
   color: #fff;
 }
-nav{
-  background-color: #333;
-  color: #fff;
-}
-nav ul{
-  list-style: none;
-  padding: 0;
-  float: left;
-}
-nav ul li{
-  display: inline-block;
-}
-nav ul li a{
-  text-decoration: none;
-  color: #fff;
-  font-size: 20px;
-  padding-right: 15px;
-}
+
 #topmenu{
   display: none;
   border: solid white;
@@ -81,10 +68,11 @@ nav ul li a{
   width: 30%;
   padding: 5px;
   color: #fff;
-  background-color: #333;
+  background-color: #111;
   box-sizing: border-box;
   border: solid 1px #fff;
   border-radius: 2px;
+  line-height: 1.6em;
 }
 
 footer{
@@ -106,9 +94,7 @@ footer{
      width: 100%;
     float: none;
   }
-  nav ul li{
-    display: none;
-  }
+  
   #topmenu{
     display: inline-block;
   }

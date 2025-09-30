@@ -12,7 +12,7 @@ function f (i,text){
 
 function registerEvents(e){
     
-    let text = "Welcome to Codex Lab.\n ";
+    let text = "Welcome to Codex Lab\n ";
     f(0,text)
     
 }

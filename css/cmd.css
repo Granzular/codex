@@ -4,39 +4,43 @@ h1{
   font-size: 25px;
 }
 
-.display{
+.terminal{
   display: box;
-  width:90vw;
+  width:80vw;
   height: 40vh;
   border-style: solid;
-  padding: 5px;
-  align-items: center;
-  border-style: solid;
   border-radius:10px;
-  border-width:3px;
+  border-width:1px;
   border-color:#777;
-  box-shadow: 0 0 5px 2px #777;
+  margin: 5px;
+  margin-top: 20px;
+  margin-bottom: 30px;
+  overflow: scroll;
+  background-color: black;
 }
 .cmdbox{
   width:95%;
-  height: 18%;
+  height: 10%;
   background-color: rgb(10,10,10);
   color:rgb(240,240,240);
   border:none;
+  margin: 0;
 }
 .cmdbox::placeholder{
   color:green;
   font-weight: bold;
 }
-.cmdbox:focus,.terminal:focus{
+.cmdbox:focus,.display:focus{
   outline: none;
 }
-.terminal{
+.display{
   width: 95%;
-  height: 78%;
+  min-height: 10%;
   background-color: rgb(10,10,10);
   color:yellow;
   border:none;
+  margin: 0;
 }
+
 
 
