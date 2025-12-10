@@ -6,6 +6,7 @@ body{
   line-height: 1.6em;
   margin: 0;
 }
+
 .website-name{
   font-family: Courier;
 }
@@ -140,7 +141,7 @@ color: lightblue;
 header{
   background: linear-gradient(90deg,coral,lightblue);
   color: #fff;
-  height: 15vh;
+  height: 8%;
 }
 
 #topmenu{
@@ -195,6 +196,25 @@ header{
   border: solid 1px #fff;
   border-radius: 2px;
   line-height: 1.6em;
+}
+#featured-projects{
+   
+}
+.pr{
+  width: 80vh;
+  height: 50vh;
+  margin: 0;
+  padding: 0;
+  background-size: cover;
+}
+#pr1{
+  background-image: url("../images/bg03.jpg");
+}
+#pr2{
+  background-image: url("../images/bg08.jpg");
+}
+.pr .card-but{
+  
 }
 
 footer{

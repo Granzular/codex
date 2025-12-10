@@ -20,7 +20,9 @@ function reg(e){
             document.querySelector("#display").innerHTML += ">>>\n"+data;
         })
         .catch(err => {
-            document.querySelector("#display").value += inp.value +"\n"+err;
+            let br = document.createElement("br");
+            const display = document.querySelector("#display"); display.append(br);
+            display.innerHTML += inp.value +"\n"+err;
         console.log(err)})
     }
     function run(e){
@@ -72,8 +74,8 @@ function reg(e){
          display.appendChild(br.cloneNode());
          display.innerHTML += result;
          display.appendChild(br.cloneNode());
-         inp.value = "";
          inp.focus();
+         inp.value = "";
          
      }
     }

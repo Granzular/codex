@@ -1,5 +1,5 @@
 .terminal{
-  display: box;
+  display: absolute;
   width:80vw;
   height: 40vh;
   border-style: solid;

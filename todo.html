@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+
+<html>
+<head>
+  <meta http-equiv="CONTENT-TYPE" content="text/html; charset=UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1.0">
+  <title>Todo|Notes</title>
+</head>
+<body>
+  <header>
+    <nav class="top-navbar" id="top-navbar">
+      <h1 class="site-name">Todo & Notes</h1>
+      <ul>
+      <li><a href="#top">Home</a></li>
+      <li><a href="#todo">Todo</a></li>
+       <li><a href="#notes">Notes</a></li>
+      </ul>
+      <img id="menu-icon" src="images/menuicon01.png" class="nav-icon">
+      
+    </nav>
+  </header>
+  
+  <main>
+  <section class="banner-carousel">
+    <div class="item" id="one">
+      <p></p>
+    </div>
+    <div class="item" id="two">
+      <p></p>
+    </div>
+    <div class="item" id="three">
+      <p></p>
+    </div>
+  </section>
+  
+  <section class="card-box" id="todo">   
+    <div class="info">
+      Welcome to a world where no tasks are left behind! 
+    </div>
+     <div class="cta">
+      <button class="btn" id="open-todo-btn">TODO</button>
+    </div>
+  </section>
+  
+  <section class="card-box" id="notes">
+    <div class="info">
+      Note keeping made convinient, 100% privacy.
+    </div>
+    <div class="cta">
+      <button class="btn" id="open-notes-btn">open notes</button>
+   
+    </div>
+  </section>
+  </main>
+  
+  <div class="modal" id="todo-app">
+      <!--dynamic content. popup-->
+    <div class="top">
+      <img src="images/close.png" class="icon" id="close-todo-icon">
+      <div class="info">
+      <h2>TODO</h2>
+        <p>Welcome to TODO! No tasks left behind.<br>You can create new tasks below.</p>
+      </div>
+      <form class="task-form">
+        <textarea id="task-textarea" placeholder="Type in your new task"></textarea>
+        <button id="add-new-task-btn" class="btn" type="submit">Add</button>
+        <details class="priority">
+          <summary> select priority
+          </summary>
+          <label>High</label>
+          <input name="priority" checked value="high" type="radio">
+          <label>Low</label>
+          <input name="priority" value="low" type="radio">
+        </details>
+      </form>
+      
+    </div>
+    <div class="task-list">
+      <h3>Tasks</h3>
+      <div class="task-cont">
+      <div class="task-item">
+        <li class="task">Take out the trash</li><button class="btn edit-task-btn">edit</button><button class="btn delete-task-btn">delete</button>
+      </div>
+      <div class="status">
+        <time>5:00am</time>
+        <span class="category">high priority</span>
+        <div class="toggle-bar"><div class="toggle-bar-icon active-toggle-bar"></div></div>
+      </div>
+      </div>
+      <!-- start -->
+      <div class="task-cont">
+      <div class="task-item">
+        <li class="task">Call sabrina loki</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
+      </div>
+      <time class="time">7:00am</time>
+      </div>
+      
+      <div class="task-cont">
+      <div class="task-item">
+        <li class="task">Read three chapters of MTS</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
+      </div>
+      <time class="time">5:00am</time>
+      </div>
+      
+      <div class="task-cont">
+      <div class="task-item">
+        <li class="task">Take out the trash</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
+      </div>
+      <div class="time">5:00am
+      </div>
+      </div>
+      <!-- end -->
+    </div>
+    </div>
+    
+    <div class="modal" id="notes-app">
+      NOTES
+       <!--dynamic content. popup-->
+    </div>
+  
+  <form class="popup-form" id="edit-task-popup-form">
+    <!-- popup form has display none by default -->
+    <input name="taskId" hidden>
+    <div class="info">
+      <p>Edit task</p>
+       <img src="images/close.png" class="icon" id="close-edit-popup-icon">
+    </div>
+        <textarea id="task-textarea" placeholder="Type in your task" name="taskText"></textarea>
+        <details class="priority">
+          <summary> select priority
+          </summary>
+          <label>High</label>
+          <input name="priority" checked value="high" type="radio">
+          <label>Low</label>
+          <input name="priority" value="low" type="radio">
+        </details>
+        <button id="save-task-btn" class="btn" type="submit">save</button>
+  </form>
+  
+  
+  <footer>
+    <div class="socials">
+      <a href="">github</a>
+      <a href="">instagram</a>
+    </div>
+    <div>
+      <p>@granzularcodex©<span id="year"></span></p>
+    </div>
+    
+  </footer>
+</body>
+<link rel="stylesheet" href="css/todo.css">
+<script type="application/javascript" src="js/todo.js"></script>
+<script type="application/javascript">
+
+document.querySelector("#year").textContent = new Date().getFullYear();
+</script>
+</html>
