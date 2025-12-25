@@ -51,6 +51,7 @@
    
     </div>
   </section>
+    <div id="todo-progress-chart"></div>
   </main>
   
   <div class="modal" id="todo-app">
@@ -77,46 +78,28 @@
     </div>
     <div class="task-list">
       <h3>Tasks</h3>
-      <div class="task-cont">
-      <div class="task-item">
-        <li class="task">Take out the trash</li><button class="btn edit-task-btn">edit</button><button class="btn delete-task-btn">delete</button>
-      </div>
-      <div class="status">
-        <time>5:00am</time>
-        <span class="category">high priority</span>
-        <div class="toggle-bar"><div class="toggle-bar-icon active-toggle-bar"></div></div>
-      </div>
-      </div>
-      <!-- start -->
-      <div class="task-cont">
-      <div class="task-item">
-        <li class="task">Call sabrina loki</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
-      </div>
-      <time class="time">7:00am</time>
-      </div>
       
-      <div class="task-cont">
-      <div class="task-item">
-        <li class="task">Read three chapters of MTS</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
-      </div>
-      <time class="time">5:00am</time>
-      </div>
-      
-      <div class="task-cont">
-      <div class="task-item">
-        <li class="task">Take out the trash</li><button class="btn edit-btn">edit</button><button class="btn delete-btn">delete</button>
-      </div>
-      <div class="time">5:00am
-      </div>
-      </div>
-      <!-- end -->
     </div>
     </div>
     
-    <div class="modal" id="notes-app">
-      NOTES
+    <div class="modal notesapp" id="notes-app">
+     
        <!--dynamic content. popup-->
+      <div class="navbar">
+        <div class="toolbar">
+          <img src="images/folder2-open.svg" class="icon toggle-folder-btn" id="file-manager-icon">
+          <img src="images/floppy2.svg" class="icon save-file-btn" id="save-notes-icon">
+        </div>
+          <img src="images/close.png" class="icon" id="close-notes-icon">
+        <div class="note-title-cont">
+        <input id="note-title" class="note-title disabled" value="untitled"><img class="icon" src="images/pencil-square.svg">
+        </div>
+      </div>
+      <div class="editor">
+        <textarea tabindex="-1" id="editor" placeholder="enter your note"></textarea>
+      </div>
     </div>
+  
   
   <form class="popup-form" id="edit-task-popup-form">
     <!-- popup form has display none by default -->
@@ -137,6 +120,11 @@
         <button id="save-task-btn" class="btn" type="submit">save</button>
   </form>
   
+  <div id="file-manager-window" class="file-manager-window hidden">
+    <!-- folder window, dynamic content -->
+    <div class=""></div>
+    <div class="file-list"></div>
+  </div>
   
   <footer>
     <div class="socials">
@@ -151,6 +139,8 @@
 </body>
 <link rel="stylesheet" href="css/todo.css">
 <script type="application/javascript" src="js/todo.js"></script>
+<script type="application/javascript" src="js/apexcharts.min.js"></script>
+<script type="application/javascript" src="js/charht.js"></script>
 <script type="application/javascript">
 
 document.querySelector("#year").textContent = new Date().getFullYear();

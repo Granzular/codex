@@ -161,13 +161,14 @@ section.show {
   width: 100vw;
   height: 100vh;
   background-color: rgb(240,250,240);
-  z-index: 99999999;
+  z-index: 99999;
   grid-template-columns: 100%;
   grid-template-rows: 45% 55%;
 }
 
 .modal .top{
   display: grid;
+  justify-items: center;
   grid-template-columns: 100%;
   z-index: 9999;
 }
@@ -287,14 +288,16 @@ section.show {
 .modal .toggle-bar{
   border: grove 0.8px #222;
   border-radius: 25px;
-  margin: 2px;
+  max-width: 100px;
+  height: 95%;
+  margin: 2.5%;
   background-color: #ccc;
 }
 .modal .toggle-bar-icon{
   align-content: center;
   border-style: none;
   border-radius: 50%;
-  width: 1.8em;
+  width: 40px;
   height: 100%;
   color: #aaa;
   background-color: gray;
@@ -375,4 +378,91 @@ section.show {
   background-color: rgb(10,180,10);
   font-size: 24px;
   font-weight: 450;
+}
+
+/* Notes app style*/
+.notesapp{
+  grid-template-columns: 100%;
+  grid-template-rows: 20% 90%;
+}
+.notesapp .navbar{
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 50%;
+  border: solid 1px red;
+}
+.notesapp .navbar .toolbar{
+  grid-column: span 2;
+  display: grid;
+  grid-template-columns: repeat(auto-fill,40px);
+  
+}
+notesapp .navbar .icon{
+  grid-column: span 1;
+}
+.notesapp .note-title-cont{
+  display: grid;
+  grid-template-columns: 90% 10%;
+  grid-column: span 2;
+  z-index: 909900;
+  align-items: center;
+  background-color: rgba(200,255,200,0.7);
+  border-radius: 15px;
+  padding: 3px;
+}
+.notesapp .note-title-cont .icon{
+  background-color: inherit;
+}
+.note-title{
+  align-self: center;
+  font-size: 18px;
+  font-weight: 400;
+  border-style: none;
+  padding: 2px;
+  background-color: none;
+  color: #222;
+}
+.note-title:focus{
+  outline-color: #222;
+  outline-width: 0.8px;
+  background-color: rgba(255,255,255,0.7);
+}
+.disabled{
+  background-color: rgba(200,255,200,0.7);
+  color: #444;
+}
+.editor{
+  display: grid;
+}
+.editor textarea{
+  width: 90%;
+  height: 90%;
+  justify-self: center;
+  padding: 10px;
+  background-color: rgba(255,255,255,0.5);
+  border: solid #333 0.8px;
+  border-radius: 5px;
+  font-size: 16px;
+  font-weight: 400;
+}
+.editor textarea:focus{
+  outline: none;
+}
+.file-manager-window{
+  display: grid;
+  grid-template-columns: 100%;
+  grid-template-rows: 15% 85%;
+  background-color: #fff;
+  width: 70vw;
+  height: 40vh;
+  border: solid 0.8px #222;
+  border-radius: 15px;
+  position: fixed;
+  top: 20vh;
+  left: 15vw;
+  right: 15vw;
+  z-index: 999999;
+}
+.hidden{
+  display: none;
 }

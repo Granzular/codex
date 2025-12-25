@@ -1,5 +1,16 @@
+function addMultipleEvents(element,entries){
+    entries.forEach((entry)=>{element.addEventListener(entry.event,entry.action,false)});
+}
+
+function addEventToMultiple(event,entries){
+    entries.forEach((entry)=>{
+        entry.element.addEventListener(event,entry.action,false);
+    })
+}
+
 window.addEventListener("load",main,false);
-//localStorage.clear();
+localStorage.clear();
+
 function main(event){
     topNavbar();
     bannerCarousel();
@@ -221,12 +232,116 @@ taskForm.addEventListener("submit",(e)=>{
 
 
 function notesApp(){
+    
+    // component handlers
+    function handleSave(){
+        const saveBtnList = document.querySelectorAll(".save-file-btn");
+        [...saveBtnList].forEach((btn)=>{btn.addEventListener("click",(e)=>{saveEditorContent(e.id)},false)});
+    }
+    function handleFolder(){
+        const toggleFolderBtnList = document.querySelectorAll(".toggle-folder-btn");
+        [...toggleFolderBtnList].forEach((btn)=>{btn.addEventListener("click",(e)=>{toggleFileManager()},false)});
+        
+    }
+    
+    function handleNoteTitleElement(){
+        const noteTitleList = document.querySelectorAll(".note-title");
+        [...noteTitleList].forEach((el)=>{el.parentNode.addEventListener("click",(e)=>{el.classList.remove("disabled");el.focus();},true);
+ el.addEventListener("keypress",(e)=>{
+     if (e.key == "Enter"){
+         el.classList.toggle("disabled");
+         el.blur();
+     }},false);            
+        })
+    }
+    function handleEditor(){}
+    //end of component handlers
+    
+    // helper functions
+    function getFiles(){
+        let files = localStorage.getItem("files");
+        return JSON.parse(files);
+    }
+    function newFile(){
+        
+    }
+    
+    function saveFile(fd){
+        let files = JSON.parse(localStorage.getItem("files"));
+        files = (files == null) ? [] : files;
+        console.log("presave",fd.name,fd.data);
+        let exists = false;
+        files.forEach((f)=>{
+            if (f.name == fd.name){
+                exists = true;
+                const choice = confirm("overwrite existing file? ");
+                if (choice){
+                    f.data = fd.data;
+                    localStorage.setItem("files",JSON.stringify(files));
+                    console.log("saved overwrite",fd.name,fd.data);
+                }
+            }
+            
+        }); //end of forEach
+        if (exists==false){
+            files.push(fd);
+                    localStorage.setItem("files",JSON.stringify(files));
+            console.log("saved",fd.name,fd.data);
+        }
+        files.forEach((f)=>{
+            console.log(f.name," ",f.data);
+        })
+    }
+    function saveEditorContent(e){
+        const editor = document.querySelector("#editor");
+        const noteTitle = document.querySelector("#note-title");
+        const fd = {name:noteTitle.value,data:editor.value};
+        saveFile(fd);
+    }
+    
+    function toggleFileManager(){
+        const fileManager = document.querySelector("#file-manager-window");
+        fileManager.classList.toggle("hidden");
+        const fileListWindow = fileManager.querySelector(".file-list");
+       let files = getFiles();
+        let buffer = "";
+        if (files){
+        files.reverse();
+        files.forEach((file)=>{
+            buffer += `<div class="file-cont"><li class="item">${file.name}</li><img src="images/three-dots-vertical.svg" class="icon"></div>`;
+        });}
+            else{
+                buffer = `<div class="alert">No files available</div>`
+            }
+        
+        fileListWindow.innerHTML = buffer;
+        const fileList = fileListWindow.querySelectorAll(".item");
+        fileList.forEach((file)=>{
+            file.addEventListener("click",()=>{alert("file")})
+        })
+    }
+    function updateUI(){
+        // create handlers
+        handleSave();
+        handleFolder();
+        handleEditor();
+        handleNoteTitleElement();
+    }
+    // end of functions
+    
+    updateUI();
+    
     const openBtn = document.querySelector("#open-notes-btn");
     const notesModal = document.querySelector("#notes-app");
-    
+    const closeIcon = document.querySelector("#close-notes-icon");
     openBtn.addEventListener("click",(e)=>{
         notesModal.style.display = "grid";
-    },false)
+    },false);
+    
+    closeIcon.addEventListener("click",(e)=>{
+     notesModal.style.display = "none";
+ },false);   
+    
     
 }
 
