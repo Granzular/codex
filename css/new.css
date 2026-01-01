@@ -1,0 +1,89 @@
+body{
+  background-color: #000;
+}
+main{
+  background-color: rgba(255,255,255,0.09);
+  backdrop-filter: blur(16px);
+  height: 50vh;
+}
+.curtain{
+  display: grid;
+  grid-template-columns:repeat(30,5%);
+}
+
+.star{
+  margin: 10px;
+  width: 0.1px;
+  height: 0.1px;
+  border-radius: 60%;
+  background-color: #aaaaff;
+  box-shadow: 0 0 1px 1.5px #eeeeff;
+}
+.on{
+  background-color: green;
+  box-shadow: 0 0 1px 1.5px green;
+}
+.cont{
+  height: 200px;
+  width: 100px;
+  border: none 0.8px #ccc;
+  margin: auto;
+}
+
+ .object{
+   text-align: center;
+   border-style: none;
+   border-bottom-right-radius: 50%;
+   border-bottom-left-radius: 50%;
+   border-bottom-style: groove;
+   border-bottom-color: peru;
+   border-bottom-width: 5px;
+   height: 100px;
+   width: 100px;
+   z-index: 9000;
+ }
+.one{
+  font-size: 28px;
+  font-style: italic;
+  font-family: cursive;
+  color: #fff;
+  font-weight: 900;
+}
+.two{
+  font-size: 26px;
+  font-family: sans-serif;
+  color: #ffe;
+  font-weight: 300;
+}
+.three{
+  font-size: 28px;
+  font-style: italic;
+  font-family: Helvetica;
+  color: #22bbaa;
+  font-weight: 900;
+}
+@keyframes s{
+  from{
+    translate: 0 -80px ;
+    opacity: 0;
+  }
+  to{
+    translate: 0px 10px ;
+    opacity: 1;
+  }
+}
+.year{
+  font-size: 28px;
+  font-style: italic;
+  font-family: Helvetica;
+  color: #ccc;
+  font-weight: 900;
+  rotate: 90deg;
+  margin-top: 50px;
+  animation-name: s;
+  animation-duration: 2s;
+  animation-fill-mode: forwards;
+  z-index: 700;
+  text-shadow: 0 0 7px peru;
+}
+
