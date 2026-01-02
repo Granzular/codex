@@ -10,7 +10,26 @@ main{
   display: grid;
   grid-template-columns:repeat(30,5%);
 }
-
+@keyframes throb{
+  from{
+    font-size: 20px;
+    text-shadow: 0 0 2px  peru;
+  }
+  to{
+    font-size: 21px;
+    text-shadow: 0 0 5px peru;
+  }
+}
+.info{
+  margin: 20px;
+  text-align: center;
+  font-size: 24px;
+  font-family: Helvetica;
+  color: #ffe;
+  animation-name: throb;
+  animation-duration: 0.8s;
+  animation-iteration-count: infinite;
+}
 .star{
   margin: 10px;
   width: 0.1px;

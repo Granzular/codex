@@ -1,6 +1,22 @@
 window.addEventListener("load",init);
-
+let currentAudio;
 function init(e){
+        
+document.addEventListener('click', (e) => {
+    document.querySelector(".info").style.display = "none";
+  if (currentAudio) {
+      if (!currentAudio.paused){
+    currentAudio.pause();}
+      else{
+          currentAudio.play();
+      }
+    
+  }
+    else{
+  currentAudio = new Audio('media/eminem.mp3'); // assign here
+  currentAudio.play();
+    }
+});
     let curtain = document.querySelectorAll(".tube");
     curtain.forEach((tube)=>{
         let stars = tube.querySelectorAll(".star");
